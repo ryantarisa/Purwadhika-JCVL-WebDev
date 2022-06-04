@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <link rel="stylesheet" href="styling.css" />
+  <body
+    style="
+      background: linear-gradient(
+        0deg,
+        rgba(151, 107, 180, 1) 0%,
+        rgba(255, 133, 133, 1) 48%,
+        rgba(255, 234, 204, 1) 100%
+      );
+      margin-left: auto;
+      margin-right: auto;
+      display: block;
+      height: 100vmin;
+    "
+  >
+    <div
+      style="
+        font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+        background: linear-gradient(
+          45deg,
+          rgba(252, 255, 254, 0.7) 0%,
+          rgba(255, 226, 226, 0.7) 100%
+        );
+        width: 400px;
+
+        padding: 50px;
+        margin-top: 5%;
+        margin-left: auto;
+        margin-right: auto;
+        display: block;
+        border-radius: 5rem;
+        box-shadow: 3px 3px 100px 3px rgb(112, 112, 112);
+      "
+    >
+      <h1 style="text-align: center; font-size: 50px;">To Do App</h1>
+      <input
+        type="text"
+        id="input"
+        style="
+          height: 2rem;
+          width: 80%;
+          border-radius: 0.5em;
+          border: 1em;
+          background-color: white;
+          font-weight: bolder;
+          font-size: 1em;
+        "
+        placeholder="  Input Your Task"
+      />
+      <input type="button" value="ADD" onclick="onAdd()" class="btnAdd"></input>
+      <br />
+      <h3 style="text-align: center; font-size: 22px;"><u>Your Task:</u></h3>
+      <div id="list"></div>
+    </div>
+  </body>
+  <script>
+    let database = [];
+    let today = new Date();
+    let dd = String(today.getDate()).padStart(2, '0');
+    let mm = String(today.getMonth() + 1).padStart(2, '0'); //January is 0!
+    let yyyy = today.getFullYear();
+
+    today = dd + '/' + mm + '/' + yyyy;
+
+    let onAdd = () => {
+      // ambil data dari input
+      let input = document.getElementById("input").value;
+      database.push(input);
+      showlist(database);
+      document.getElementById("input").value = "";
+    };
+
+    let showlist = (data) => {
+      let li = "";
+      data.forEach((item, index) => {
+        li += `<div class="listStyle">${item}             <i><span style="font-size:15px; color:gray">     (${today})</span></i> <input type="button" class="btnEdit" value="Edit" onClick="onEdit(${index})" style="font-size:large">&nbsp&nbsp<input type="button" class="btnDelete" value="DEL" onClick="onDelete(${index})"></div></br>`;
+      });
+      document.getElementById("list").innerHTML = li;
+    };
+
+    let onDelete = (id) => {
+      database.splice(id, 1);
+      showlist(database);
+    };
+
+    let onEdit = (id) => {
+      let editTodo = prompt("Edit To-Do:");
+      //   console.log(typeof editTodo);
+
+      if (editTodo) {
+        database.splice(id, 1, editTodo);
+        showlist(database);
+      }
+    };
+    showlist(database);
+  </script>
+</html>

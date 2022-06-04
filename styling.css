@@ -1,0 +1,83 @@
+.btnEdit {
+  height: 2rem;
+  width: 4rem;
+  border-radius: 0.5em;
+  border: 0em;
+  background-color: rgb(92, 148, 78);
+  font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande",
+    "Lucida Sans", Arial, sans-serif;
+  font-weight: bolder;
+  font-size: 1em;
+  color: white;
+  /* margin-left: 10em; */
+}
+
+.btnEdit:active {
+  height: 2rem;
+  width: 4rem;
+  border-radius: 0.5em;
+  border: 0em;
+  background-color: white;
+  font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande",
+    "Lucida Sans", Arial, sans-serif;
+  font-weight: bolder;
+  font-size: 1em;
+  color: rgb(92, 148, 78);
+  /* margin-left: 10em; */
+}
+
+.btnDelete {
+  height: 2rem;
+  width: 4rem;
+  border-radius: 0.5em;
+  border: 0em;
+  background-color: rgb(207, 61, 61);
+  font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande",
+    "Lucida Sans", Arial, sans-serif;
+  font-weight: bolder;
+  font-size: 1em;
+  color: white;
+}
+
+.btnDelete:active {
+  height: 2rem;
+  width: 4rem;
+  border-radius: 0.5em;
+  border: 0em;
+  background-color: rgb(255, 255, 255);
+  font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande",
+    "Lucida Sans", Arial, sans-serif;
+  font-weight: bolder;
+  font-size: 1em;
+  color: rgb(207, 61, 61);
+}
+
+.btnAdd {
+  height: 2rem;
+  width: 4rem;
+  border-radius: 0.5em;
+  border: 0em;
+  background-color: rgb(84, 115, 214);
+  font-weight: bolder;
+  font-size: 1em;
+  color: white;
+}
+
+.btnAdd:active {
+  height: 2rem;
+  width: 4rem;
+  border-radius: 0.5em;
+  border: 0em;
+  background-color: white;
+  font-weight: bolder;
+  font-size: 1em;
+  color: rgb(84, 115, 214);
+}
+
+::placeholder {
+  opacity: 40%;
+}
+
+.listStyle {
+  font-size: large;
+}
